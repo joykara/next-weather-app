@@ -5,8 +5,14 @@ module.exports = {
     './components/**/*.{js,ts,jsx,tsx}',
     './node_modules/rippleui/**/*.{js,ts,jsx,tsx}',
   ],
+  darkMode: 'class',
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        background: 'var(--background)',
+        foreground: 'var(--foreground)',
+      },
+    },
   },
   plugins: [require('rippleui')],
 };

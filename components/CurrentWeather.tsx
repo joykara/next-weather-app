@@ -25,7 +25,7 @@ const CurrentWeather = ({ current }: Props) => {
                     <p>{weather.main} - {weather.description}</p>
                 </div>
             </div>
-                <p className='text-lg text-purple-300 mt-2'>
+                <p className='text-lg text-pink-8 mt-2'>
                     {new Date().toLocaleDateString(undefined, {
                         day: 'numeric',
                         month: 'long',
