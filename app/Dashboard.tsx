@@ -67,7 +67,7 @@ export default function Dashboard() {
 
 
     return (
-        <div className="w-screen h-screen flex flex-col-reverse sm:flex-row relative">
+        <div className="min-w-screen min-h-screen flex flex-col sm:flex-row relative">
 
             {loading ? (
                 <div className="flex flex-col justify-center items-center w-full h-full bg-gradient-to-br from-pink-6 via-purple-4 to-black">
