@@ -1,6 +1,7 @@
 'use client';
 import React from 'react';
 import type { LocationSuggestion } from '@/utils';
+import ThemeToggle from './ThemeToggler';
 
 interface SearchBarProps {
     query: string;
@@ -11,14 +12,14 @@ interface SearchBarProps {
 }
 
 const SearchBar = ({ query, suggestions, onInputChange, onCitySelect, onSearch }: SearchBarProps) => (
-    <div className='flex gap-3 sm:gap-4 items-center justify-start w-full max-w-6xl h-[5dvh] mt-4 mb-8 p-4'>
+    <div className='flex gap-3 sm:gap-4 items-center justify-start w-full max-w-6xl h-[5dvh] mt-4 sm:mt-6 mb-4 p-4 md:p-8'>
         <div className='relative'>
             <input
                 type='text'
                 value={query}
                 onChange={onInputChange}
                 placeholder='Search for a city...'
-                className='input input-secondary input-md w-full'
+                className='input bg-purple-100 dark:bg-purple-1 border-pink-100 dark:border-pink-1 input-md w-full'
             />
 
             {suggestions.length > 0 && (
@@ -38,6 +39,7 @@ const SearchBar = ({ query, suggestions, onInputChange, onCitySelect, onSearch }
         <button className='btn btn-secondary btn-sm md:btn-md bg-pink-7 hover:btn-success w-fit self-center' onClick={onSearch}>
             GO
         </button>
+        <ThemeToggle />
     </div>
 );
 

@@ -67,22 +67,22 @@ export default function Dashboard() {
 
 
     return (
-        <div className="min-w-screen min-h-screen flex flex-col sm:flex-row relative">
+        <div className="w-screen h-screen flex flex-col sm:flex-row relative overflow-y-auto text-black dark:text-white">
 
             {loading ? (
-                <div className="flex flex-col justify-center items-center w-full h-full bg-gradient-to-br from-pink-6 via-purple-4 to-black">
+                <div className="flex flex-col justify-center items-center w-full h-full bg-gradient-to-br from-pink-100 via-purple-200 to-white dark:from-pink-6 dark:via-purple-4 dark:to-black transition-colors">
                     <div className="spinner-dot-intermittent [--spinner-color:var(--pink-8)]"></div>
                     <p className="mt-2 text-pink-8">Fetching weather data...</p>
                 </div>
             ) : (
                 <>
                     {weatherData && (
-                        <div className='w-full max-w-sm h-full bg-purple-2 border-r border-purple-2 shadow-md p-4 text-center'>
+                        <div className='w-full max-w-sm h-full bg-purple-50 dark:bg-purple-2 shadow-md p-4 text-center'>
                             <CurrentWeather current={weatherData.current} />
                         </div>
                     )}
 
-                    <div className="w-full flex flex-col items-center gap-4 bg-gradient-to-br from-pink-6 via-purple-4 to-black dark:from-pink-8 dark:via-purple-4 dark:to-black transition-colors">
+                    <div className="w-full h-full flex flex-col items-center justify-start gap-4 bg-gradient-to-br from-pink-100 via-purple-200 to-white dark:from-pink-6 dark:via-purple-4 dark:to-black transition-colors">
                         <SearchBar
                             query={query}
                             suggestions={suggestions}
@@ -97,7 +97,7 @@ export default function Dashboard() {
 
 
                         {weatherData && (
-                            <div className="w-full max-w-6xl grid gap-6 p-4">
+                            <div className="w-full max-w-6xl flex flex-col justify-between gap-6 md:gap-8 p-4 md:px-8">
                                 <div className="flex flex-col md:flex-row gap-6">
                                     <Forecast forecast={weatherData.forecast.slice(1, 4)}
                                         isCelsius={isCelsius}
