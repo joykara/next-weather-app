@@ -19,7 +19,7 @@ const SearchBar = ({ query, suggestions, onInputChange, onCitySelect, onSearch }
                 value={query}
                 onChange={onInputChange}
                 placeholder='Search for a city...'
-                className='input bg-purple-100 dark:bg-purple-1 border-pink-100 dark:border-pink-1 input-md w-full'
+                className='input bg-purple-100 dark:bg-purple-1 border-pink-300 dark:border-pink-1 input-md w-full'
             />
 
             {suggestions.length > 0 && (

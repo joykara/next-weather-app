@@ -21,7 +21,7 @@ export default function Dashboard() {
     const fetchWeather = async (lat: number, lon: number) => {
         setLoading(true);
         try {
-            const res = await fetch(`http://localhost:8000/api/weather?lat=${lat}&lon=${lon}`);
+            const res = await fetch(`https://laravel-weather-api.onrender.com/api/weather?lat=${lat}&lon=${lon}`);
             const data = await res.json();
             setWeatherData(data);
         } catch (error) {
@@ -54,7 +54,7 @@ export default function Dashboard() {
         setLoading(true);
         try {
             const res = await fetch(
-                `http://localhost:8000/api/weather?lat=${selectedLocation.lat}&lon=${selectedLocation.lon}`
+                `https://laravel-weather-api.onrender.com/api/weather?lat=${selectedLocation.lat}&lon=${selectedLocation.lon}`
             );
             const data = await res.json();
             setWeatherData(data);
