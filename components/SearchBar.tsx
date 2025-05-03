@@ -19,7 +19,7 @@ const SearchBar = ({ query, suggestions, onInputChange, onCitySelect, onSearch }
                 value={query}
                 onChange={onInputChange}
                 placeholder='Search for a city...'
-                className='input bg-purple-100 dark:bg-purple-1 border-pink-300 dark:border-pink-1 input-md w-full'
+                className='input bg-purple-100 dark:bg-purple-1 border-pink-300 dark:border-pink-1 text-black dark:text-white input-md w-full'
             />
 
             {suggestions.length > 0 && (
@@ -36,7 +36,7 @@ const SearchBar = ({ query, suggestions, onInputChange, onCitySelect, onSearch }
                 </ul>
             )}
         </div>
-        <button className='btn btn-secondary btn-sm md:btn-md bg-pink-7 hover:btn-success w-fit self-center' onClick={onSearch}>
+        <button className='btn btn-secondary btn-sm md:btn-md bg-pink-7 hover:bg-purple-800 w-fit self-center' onClick={onSearch}>
             GO
         </button>
         <ThemeToggle />
