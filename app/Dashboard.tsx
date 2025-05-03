@@ -95,11 +95,10 @@ export default function Dashboard() {
                             onSearch={handleSearch}
                         />
 
-
                         {weatherData && (
                             <div className="w-full max-w-6xl flex flex-col justify-between gap-6 md:gap-8 p-4 md:px-8">
                                 <div className="flex flex-col md:flex-row gap-6">
-                                    <Forecast forecast={weatherData.forecast.slice(1, 4)}
+                                    <Forecast forecast={weatherData.forecast}
                                         isCelsius={isCelsius}
                                         toggleTemperatureUnit={toggleTemperatureUnit}
                                     />

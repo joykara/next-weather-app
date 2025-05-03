@@ -7,6 +7,7 @@ interface Props {
   isCelsius: boolean;
   toggleTemperatureUnit: () => void;
 }
+
 const Forecast = ({ forecast, isCelsius, toggleTemperatureUnit }: Props) => {
   function formatTemperature(temp: number) {
     return isCelsius ? temp : (temp * 9) / 5 + 32;
@@ -21,8 +22,9 @@ const Forecast = ({ forecast, isCelsius, toggleTemperatureUnit }: Props) => {
         </button>
       </div>
       <div className='grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 w-full'>
-        {forecast.map((day: any, index: number) => {
-          const date = new Date(day.dt_txt);
+        {forecast.map((day, index) => {
+          const date = new Date(day.date);
+
           return (
             <div key={index} className='card-body bg-purple-50 dark:bg-purple-2 w-full text-center rounded-md'>
               <h4>{date.toLocaleDateString()}</h4>
@@ -30,17 +32,17 @@ const Forecast = ({ forecast, isCelsius, toggleTemperatureUnit }: Props) => {
                 width={30}
                 height={30}
                 className='w-20 h-20 mx-auto'
-                src={`http://openweathermap.org/img/wn/${day.weather[0].icon}.png`}
-                alt={day.weather[0].description}
+                src={`https://openweathermap.org/img/wn/${day.icon}@2x.png`}
+                alt={day.description}
               />
-              <p>{formatTemperature(day.main.temp).toFixed(1)}° {isCelsius ? 'C' : 'F'}</p>
-              <p>{day.weather[0].description}</p>
+              <p>{formatTemperature(day.min_temp).toFixed(1)}° - {formatTemperature(day.max_temp).toFixed(1)}° {isCelsius ? 'C' : 'F'}</p>
+              <p>{day.description}</p>
             </div>
           );
         })}
       </div>
     </div>
-  )
+  );
 };
 
 export default Forecast;
